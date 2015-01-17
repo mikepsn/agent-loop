@@ -16,6 +16,8 @@
 \usepackage{helvet} 
 
 \usetheme{Madrid} 
+%\useoutertheme{smoothbars} 
+\useinnertheme{rectangles} 
 
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{blocks}[default] 
@@ -24,7 +26,9 @@
 %\setbeamercolor*{palette primary}{use=structure,fg=white,bg=green}
 %\usecolortheme[rgb={0.9,0.2,0.2}]{structure}
 %\usecolortheme[rgb={0.6,0.1,0.1}]{structure}
-\usecolortheme[rgb={0.7, 0.0, 0.0}]{structure} 
+
+%\usecolortheme[rgb={0.7, 0.0, 0.0}]{structure} 
+\usecolortheme[rgb={0.0, 0.0, 0.8}]{structure} 
 
 \usepackage{color}
 \definecolor{orange}{cmyk}{0,0.4,0.8,0.2}
@@ -84,7 +88,7 @@
 }
 
 
-\title[Intelligent Agents]{Rethinking the Agent Perceive-Reason-Act Loop} 
+\title[Intelligent Agents]{Rethinking the Intelligent Agent \\ Perceive-Reason-Act Loop} 
 %\subtitle{Intelligent Agent Lab} 
 \author{Michael Papasimeon} 
 \date{} 
@@ -109,15 +113,26 @@
 \end{frame} 
 
 \begin{frame}{Agent-Environment Interaction Loop} 
-Two
+    \begin{center}
+        \includegraphics[width=0.8\textwidth]{loop} 
+    \end{center} 
 \end{frame} 
 
 \begin{frame}{Agent Control Loop...}
-Three
+    \begin{block}{Pythonic Version of Wooldridge's Agent Control Loop} 
+        \showcode{wooldridge.py} 
+    \end{block} 
 \end{frame} 
 
 \begin{frame}{Or the BDI Control Loop...}
-Four
+    \begin{itemize}
+        \item Begin to look at the agent control loop and the interaction
+              with the environment in more detail.
+        \item The interaction between agent and environment needs to be
+              broken down into components, step by step.
+        \item Start looking at how inputs/outputs are generated...
+              i.e. look at sensors and actuators.
+    \end{itemize} 
 \end{frame} 
 
 \begin{frame}{Let dig deeper...}
@@ -125,7 +140,9 @@ Five
 \end{frame} 
 
 \begin{frame}{A level down...}
-Six
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{sensorsactuators} 
+    \end{center} 
 \end{frame} 
 
 \begin{frame}{Labels in the Environment}  
