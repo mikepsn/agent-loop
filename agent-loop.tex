@@ -14,6 +14,8 @@
 \usepackage{pifont} 
 \usepackage{alltt} 
 \usepackage{helvet} 
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 
 \usetheme{Madrid} 
 %\useoutertheme{smoothbars} 
@@ -125,6 +127,25 @@
 \end{frame} 
 
 \begin{frame}{Or the BDI Control Loop...}
+    \begin{block}{Adapted from Wooldridge...} 
+        \begin{algorithmic}[0] 
+            \Procedure{BDI}{$B_0, I_0$} 
+                \State $B \gets B_0$
+                \State $I \gets I_0$
+                \While{True} 
+                    \State $\rho \gets \texttt{get\_next\_percept}();$
+                    \State $B \gets \texttt{brf}(B, \rho);$
+                    \State $D \gets \texttt{options}(B, I);$ 
+                    \State $I \gets \texttt{filter}(B, D, I); $
+                    \State $\pi \gets \texttt{plan}(B, I); $
+                    \State $\texttt{execute}(\pi); $
+                \EndWhile
+            \EndProcedure
+        \end{algorithmic} 
+    \end{block} 
+\end{frame} 
+
+\begin{frame}{Let's dig deeper...}
     \begin{itemize}
         \item Begin to look at the agent control loop and the interaction
               with the environment in more detail.
@@ -135,10 +156,6 @@
     \end{itemize} 
 \end{frame} 
 
-\begin{frame}{Let dig deeper...}
-Five
-\end{frame} 
-
 \begin{frame}{A level down...}
     \begin{center}
         \includegraphics[width=0.7\textwidth]{sensorsactuators} 
@@ -146,23 +163,47 @@ Five
 \end{frame} 
 
 \begin{frame}{Labels in the Environment}  
-Seven
+    \begin{itemize} 
+        \item One of the things that is sent to an agent's sensors
+              is the possibility of pre-labeled entities in the 
+              environment. 
+    \end{itemize} 
 \end{frame} 
 
 \begin{frame}{We can begin to formulate a theory...}
-Eight
+    \begin{itemize}
+        \item In a multi-agent system we have $n$ agents, $A_1 ... A_n$. 
+        \item Each agent has $m$ sensors.
+        \item We can specify the $i$-th agent's $j$-th sensor as $S_{ij}$
+    \end{itemize} 
 \end{frame} 
 
 \begin{frame}{Agent Mental States}
-Nine
+    \begin{itemize} 
+        \item Each agent $A_i$ can be in a single mental state $m_i$. 
+        \item The mental state may be the agent's beliefs and intentions.
+        \item $m_i = \{B_i, I_i\}$
+        \item Consider the sensing of the environment to be a function of the
+              agent's current mental state. 
+    \end{itemize} 
 \end{frame} 
 
 \begin{frame}{Agent Mental State in the Loop...}
-Ten
+    \begin{center} 
+        \includegraphics[width=0.7\textwidth]{mentalstateinloop} 
+    \end{center} 
 \end{frame} 
 
 \begin{frame}{Perception and Mental State}
-Eleven
+    \begin{itemize} 
+        \item Implies perception/sensing are a function of an agent's mental
+            state.
+        \item What you perceive as an agent depends on what you are doing and
+            what you believe you are doing (beliefs, intentions).
+        \item This fits in with J.J. Gibsons ideas of direct perception for 
+            ecological psychology. 
+        \item $\texttt{Sensor}(\sigma_i, e, m_i) := \sigma_{i + 1}$ 
+    \end{itemize} 
 \end{frame} 
 
 \begin{frame}{The Agent-Environment Loop Revisited}
