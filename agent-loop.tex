@@ -1,4 +1,4 @@
-\documentclass[xcolor=dvipsnames,t]{beamer} 
+\documentclass[aspectratio=1610,xcolor=dvipsnames,t]{beamer} 
 
 \usepackage{listings} 
 \usepackage{color} 
@@ -207,43 +207,102 @@
 \end{frame} 
 
 \begin{frame}{The Agent-Environment Loop Revisited}
-Twelve
+    \begin{center}
+        \includegraphics[width=0.8\textwidth]{agent-loop-revisited} 
+    \end{center} 
 \end{frame} 
 
 \begin{frame}{Intention Based Feedback Loop}
-Thirteen
+    \begin{center} 
+        \includegraphics[width=0.5\textwidth]{intention-feedback} 
+    \end{center} 
 \end{frame} 
 
 \begin{frame}{Environmental Representation} 
-Fourteen
+    \begin{itemize} 
+        \item Still need to look at environmental representation options
+            \begin{itemize}
+                \item Flat
+                \item Hierarchical/Relational
+                \item Labels (Dynamic or Pre-Processed)
+                \item Intention Oriented Affordances
+            \end{itemize} 
+        \item Dynamic agent (tailored to the agent)
+        \item Static environment
+    \end{itemize} 
 \end{frame} 
 
 \begin{frame}{So what is the goal then?}
-Fifteen
+    \begin{itemize} 
+        \item To create a \emph{truly} situated agent.
+        \item Affordances: opportunity for action
+        \item Together with a tighter agent-environment feedback loop; might
+            just do the trick.
+    \end{itemize} 
 \end{frame} 
 
 \begin{frame}{Affordances}
-Sixteen
+    \begin{itemize} 
+        \item Affordances are a function:
+            \begin{itemize}
+                \item The subset of the environment that the agent is/can
+                    perceive using its sensors.
+                \item The agent's mental state.
+                \item The agent's current activity...
+            \end{itemize} 
+        \item Do we need to distinguish between Intention/Activity/Action?
+    \end{itemize} 
 \end{frame} 
 
 \begin{frame}{Example: Jumping a Creek} 
-Seventeen
+    \begin{itemize} 
+        \item My intention is to get to Town B from Town A
+        \item I have a plan to \emph{run} from A to B
+        \item I have a plan to \emph{walk} from A to B
+        \item I see a creek
+        \item If I am running the creek \emph{affords} jumping
+        \item Here the affordance is a function of the activity rather than
+            intention.
+    \end{itemize} 
 \end{frame} 
 
 \begin{frame}{How do we build such an agent?}
-Eighteen
+    \begin{itemize} 
+        \item Agent \emph{announces} to the environment what it can see.
+        \item Agent \emph{announces} to th environment what it is doing
+            (activity or action) or maybe even intention.
+        \item Environment/Affordance engine somehow binds what a I can see with
+            what I am doing, generating affordances for the things in the
+            environment.
+    \end{itemize} 
 \end{frame} 
 
 \begin{frame}{Issues (1)}
-Nineteen
+    \begin{itemize} 
+        \item How does the agent sense/perceive the affordances?
+        \item Is there an affordance \emph{sensor}?
+        \item Does the agent get affordance percepts (direct percepts) in
+            addition to regular percepts?
+        \item How does the agent then use these affordances in the next
+            deliberation step?
+    \end{itemize} 
 \end{frame} 
 
 \begin{frame}{Issues (2)}
-Twenty
+    \begin{itemize} 
+        \item What do affordances look like? \\ Names, labels, relations?
+        \item \texttt{can-jump(creek)} $\rightarrow$ What are these? 
+        \item How does having these affordances affect your intention
+            generation process?
+        \item Need more examples...
+    \end{itemize} 
 \end{frame} 
 
 \begin{frame}{Example} 
-Twenty One
+    \begin{center} 
+        \includegraphics[width=0.35\textwidth]{example-flowchart} 
+    \end{center} 
 \end{frame} 
+
 
 \end{document}
